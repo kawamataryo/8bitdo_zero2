@@ -1,31 +1,7 @@
 #!/usr/bin/python3
 import struct
 from gpiozero import Motor
-
-# 8BitDo btn code
-class BtnCode:
-  UP_ON = [-32767, 2, 1]
-  DOWN_ON = [32767, 2, 1]
-  UP_OR_DOWN_OFF = [0, 2, 1]
-  RIGHT_ON = [32767, 2, 0]
-  LEFT_ON = [-32767, 2, 0]
-  RIGHT_OR_LEFT_OFF = [ 0, 2, 0 ]
-  Y_ON = [ 1, 1, 2 ]
-  Y_OFF =  [ 0, 1, 2 ]
-  X_ON = [1, 1, 3]
-  X_OFF = [0, 1, 3]
-  A_ON = [1, 1, 1]
-  A_OFF = [0, 1, 1]
-  B_ON = [1, 1, 0]
-  B_OFF = [0, 1, 0]
-  R_ON = [1, 1, 5]
-  R_OFF = [0, 1, 5]
-  L_ON = [1, 1, 4]
-  L_OFF = [0, 1, 4]
-  START_ON = [1, 1, 9]
-  START_OFF = [0, 1, 9]
-  SELECT_ON = [1, 1, 8]
-  SELECT_OFF = [0, 1, 8]
+from btncode import BtnCode
 
 # 8BitDo path
 device_path = "/dev/input/js0"
@@ -35,8 +11,8 @@ EVENT_FORMAT = "LhBB"
 EVENT_SIZE = struct.calcsize(EVENT_FORMAT)
 
 # motor
-motorA = Motor(forward=17, backward=18)
-motorB = Motor(forward=22, backward=23)
+motorA = Motor(forward=17, backward=22)
+motorB = Motor(forward=10, backward=11)
 
 
 with open(device_path, "rb") as device:
@@ -59,12 +35,12 @@ with open(device_path, "rb") as device:
       motorB.stop()
     if code == BtnCode.LEFT_ON:
       print("LEFT_ON")
-      motorA.backward()
+      motorA.forward(0.1)
       motorB.forward()
     if code == BtnCode.RIGHT_ON:
       print("RIGHT_ON")
       motorA.forward()
-      motorB.backward()
+      motorB.forward(0.1)
     if code == BtnCode.RIGHT_OR_LEFT_OFF:
       print("RIGHT_OR_LEFT_OFF")
       motorA.stop()
