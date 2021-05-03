@@ -1,5 +1,6 @@
 import struct
-from gpiozero import LED, LEDBarGraph
+from gpiozero import LED
+from utils.btncode import BtnCode
 
 # 8BitDo path
 device_path = "/dev/input/js0"
@@ -7,17 +8,6 @@ device_path = "/dev/input/js0"
 # event
 EVENT_FORMAT = "LhBB"
 EVENT_SIZE = struct.calcsize(EVENT_FORMAT)
-
-# btn
-class BtnCode:
-  Y_ON = [1, 1, 2]
-  Y_OFF =  [0, 1, 2]
-  X_ON = [1, 1, 3]
-  X_OFF = [0, 1, 3]
-  A_ON = [1, 1, 1]
-  A_OFF = [0, 1, 1]
-  B_ON = [1, 1, 0]
-  B_OFF = [0, 1, 0]
 
 # led
 red = LED(17)
