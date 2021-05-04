@@ -37,52 +37,54 @@ class EightBitDo:
 
     def __init__(self,
                  path="/dev/input/js0",
-                 action_on_up=lambda: None,
-                 action_on_down=lambda: None,
-                 action_off_up_or_down=lambda: None,
-                 action_on_right=lambda: None,
-                 action_on_left=lambda: None,
-                 action_off_right_or_left=lambda: None,
-                 action_on_y=lambda: None,
-                 action_off_y=lambda: None,
-                 action_on_x=lambda: None,
-                 action_off_x=lambda: None,
-                 action_on_a=lambda: None,
-                 action_off_a=lambda: None,
-                 action_on_b=lambda: None,
-                 action_off_b=lambda: None,
-                 action_on_r=lambda: None,
-                 action_off_r=lambda: None,
-                 action_on_l=lambda: None,
-                 action_off_l=lambda: None,
-                 action_on_start=lambda: None,
-                 action_off_start=lambda: None,
-                 action_on_select=lambda: None,
-                 action_off_select=lambda: None,
+                 debug_mode=False,
+                 on_up=lambda: None,
+                 on_down=lambda: None,
+                 off_up_or_down=lambda: None,
+                 on_right=lambda: None,
+                 on_left=lambda: None,
+                 off_right_or_left=lambda: None,
+                 on_y=lambda: None,
+                 off_y=lambda: None,
+                 on_x=lambda: None,
+                 off_x=lambda: None,
+                 on_a=lambda: None,
+                 off_a=lambda: None,
+                 on_b=lambda: None,
+                 off_b=lambda: None,
+                 on_r=lambda: None,
+                 off_r=lambda: None,
+                 on_l=lambda: None,
+                 off_l=lambda: None,
+                 on_start=lambda: None,
+                 off_start=lambda: None,
+                 on_select=lambda: None,
+                 off_select=lambda: None,
                  ):
         self.device_path = path
-        self.action_on_up = action_on_up
-        self.action_on_down = action_on_down
-        self.action_off_up_or_down = action_off_up_or_down
-        self.action_on_right = action_on_right
-        self.action_on_left = action_on_left
-        self.action_off_right_or_left = action_off_right_or_left
-        self.action_on_y = action_on_y
-        self.action_off_y = action_off_y
-        self.action_on_x = action_on_x
-        self.action_off_x = action_off_x
-        self.action_on_a = action_on_a
-        self.action_off_a = action_off_a
-        self.action_on_b = action_on_b
-        self.action_off_b = action_off_b
-        self.action_on_r = action_on_r
-        self.action_off_r = action_off_r
-        self.action_on_l = action_on_l
-        self.action_off_l = action_off_l
-        self.action_on_start = action_on_start
-        self.action_off_start = action_off_start
-        self.action_on_select = action_on_select
-        self.action_off_select = action_off_select
+        self.debug_mode = debug_mode
+        self.on_up = on_up
+        self.on_down = on_down
+        self.off_up_or_down = off_up_or_down
+        self.on_right = on_right
+        self.on_left = on_left
+        self.off_right_or_left = off_right_or_left
+        self.on_y = on_y
+        self.off_y = off_y
+        self.on_x = on_x
+        self.off_x = off_x
+        self.on_a = on_a
+        self.off_a = off_a
+        self.on_b = on_b
+        self.off_b = off_b
+        self.on_r = on_r
+        self.off_r = off_r
+        self.on_l = on_l
+        self.off_l = off_l
+        self.on_start = on_start
+        self.off_start = off_start
+        self.on_select = on_select
+        self.off_select = off_select
 
     def listen(self):
         with open(self.device_path, "rb") as device:
@@ -92,68 +94,90 @@ class EightBitDo:
                 code = [val, type, num]
 
                 if code == BtnCode.ON_UP:
-                    print("UP_ON")
-                    self.action_on_up()
+                    if self.debug_mode:
+                        print("UP_ON")
+                    self.on_up()
                 if code == BtnCode.ON_DOWN:
-                    print("DOWN_ON")
-                    self.action_on_down()
+                    if self.debug_mode:
+                        print("DOWN_ON")
+                    self.on_down()
                 if code == BtnCode.OFF_UP_OR_DOWN:
-                    print("UP_OR_DOWN_OFF")
-                    self.action_off_up_or_down()
+                    if self.debug_mode:
+                        print("UP_OR_DOWN_OFF")
+                    self.off_up_or_down()
                 if code == BtnCode.ON_LEFT:
-                    print("LEFT_ON")
-                    self.action_on_left()
+                    if self.debug_mode:
+                        print("LEFT_ON")
+                    self.on_left()
                 if code == BtnCode.ON_RIGHT:
-                    print("RIGHT_ON")
-                    self.action_on_right()
+                    if self.debug_mode:
+                        print("RIGHT_ON")
+                    self.on_right()
                 if code == BtnCode.OFF_RIGHT_OR_LEFT:
-                    print("RIGHT_OR_LEFT_OFF")
-                    self.action_off_right_or_left()
+                    if self.debug_mode:
+                        print("RIGHT_OR_LEFT_OFF")
+                    self.off_right_or_left()
                 if code == BtnCode.ON_A:
-                    print("A_ON")
-                    self.action_on_a()
+                    if self.debug_mode:
+                        print("A_ON")
+                    self.on_a()
                 if code == BtnCode.OFF_A:
-                    print("A_OFF")
-                    self.action_off_a()
+                    if self.debug_mode:
+                        print("A_OFF")
+                    self.off_a()
                 if code == BtnCode.ON_B:
-                    print("B_ON")
-                    self.action_on_b()
+                    if self.debug_mode:
+                        print("B_ON")
+                    self.on_b()
                 if code == BtnCode.OFF_B:
-                    print("B_OFF")
-                    self.action_off_b()
+                    if self.debug_mode:
+                        print("B_OFF")
+                    self.off_b()
                 if code == BtnCode.ON_X:
-                    print("X_ON")
-                    self.action_on_x()
+                    if self.debug_mode:
+                        print("X_ON")
+                    self.on_x()
                 if code == BtnCode.OFF_X:
-                    print("X_OFF")
-                    self.action_off_x()
+                    if self.debug_mode:
+                        print("X_OFF")
+                    self.off_x()
                 if code == BtnCode.ON_Y:
-                    print("Y_ON")
-                    self.action_on_y()
+                    if self.debug_mode:
+                        print("Y_ON")
+                    self.on_y()
                 if code == BtnCode.OFF_Y:
-                    print("Y_OFF")
-                    self.action_on_y()
+                    if self.debug_mode:
+                        print("Y_OFF")
+                    self.on_y()
                 if code == BtnCode.ON_START:
-                    print("START_ON")
-                    self.action_on_start()
+                    if self.debug_mode:
+                        print("START_ON")
+                    self.on_start()
                 if code == BtnCode.OFF_START:
-                    print("START_OFF")
-                    self.action_off_start()
+                    if self.debug_mode:
+                        print("START_OFF")
+                    self.off_start()
                 if code == BtnCode.ON_SELECT:
-                    print("SELECT_ON")
-                    self.action_on_select()
+                    if self.debug_mode:
+                        print("SELECT_ON")
+                    self.on_select()
                 if code == BtnCode.OFF_SELECT:
-                    print("SELECT_OFF")
-                    self.action_off_select()
+                    if self.debug_mode:
+                        print("SELECT_OFF")
+                    self.off_select()
                 if code == BtnCode.ON_L:
-                    print("L_ON")
-                    self.action_on_l()
+                    if self.debug_mode:
+                        print("L_ON")
+                    self.on_l()
                 if code == BtnCode.OFF_L:
-                    print("L_OFF")
-                    self.action_off_l()
+                    if self.debug_mode:
+                        print("L_OFF")
+                    self.off_l()
                 if code == BtnCode.ON_R:
-                    print("R_ON")
-                    self.action_on_r()
+                    if self.debug_mode:
+                        print("R_ON")
+                    self.on_r()
                 if code == BtnCode.OFF_R:
-                    print("R_OFF")
-                    self.action_off_r()
+                    if self.debug_mode:
+                        print("R_OFF")
+                    self.off_r()

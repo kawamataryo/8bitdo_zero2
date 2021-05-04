@@ -17,22 +17,20 @@ pwm = Adafruit_PCA9685.PCA9685()
 pwm.set_pwm_freq(60)
 
 
-def action_on_r():
-    pwm.set_pwm(SERVO_1, 0, 600)
-    pwm.set_pwm(SERVO_2, 0, 600)
-    pwm.set_pwm(SERVO_3, 0, 600)
-
-
-def action_on_l():
-    pwm.set_pwm(SERVO_1, 0, 350)
-    pwm.set_pwm(SERVO_2, 0, 350)
-    pwm.set_pwm(SERVO_3, 0, 350)
-
-
 def main():
+    def action_on_r():
+        pwm.set_pwm(SERVO_1, 0, 600)
+        pwm.set_pwm(SERVO_2, 0, 600)
+        pwm.set_pwm(SERVO_3, 0, 600)
+
+    def action_on_l():
+        pwm.set_pwm(SERVO_1, 0, 350)
+        pwm.set_pwm(SERVO_2, 0, 350)
+        pwm.set_pwm(SERVO_3, 0, 350)
+
     controller = EightBitDo(
-        action_on_r=action_on_r,
-        action_on_l=action_on_l
+        on_r=action_on_r,
+        on_l=action_on_l
     )
     controller.listen()
 
