@@ -1,6 +1,6 @@
 import struct
 from gpiozero import LED
-from utils.eightbitdozero2 import EightBitDoZero2
+from eightbitdo_zero2.eightbitdo_zero2 import EightBitDoZero2
 
 # led
 red = LED(17)
