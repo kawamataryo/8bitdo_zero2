@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Adafruit-GPIO
+Version: 1.0.3
+Summary: Library to provide a cross-platform GPIO interface on the Raspberry Pi and Beaglebone Black using the RPi.GPIO and Adafruit_BBIO libraries.
+Home-page: https://github.com/adafruit/Adafruit_Python_GPIO/
+Author: Tony DiCola
+Author-email: tdicola@adafruit.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
