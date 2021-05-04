@@ -18,19 +18,19 @@ pwm.set_pwm_freq(60)
 
 
 def main():
-    def action_on_r():
+    def move_max():
         pwm.set_pwm(SERVO_1, 0, 600)
         pwm.set_pwm(SERVO_2, 0, 600)
         pwm.set_pwm(SERVO_3, 0, 600)
 
-    def action_on_l():
+    def move_min():
         pwm.set_pwm(SERVO_1, 0, 350)
         pwm.set_pwm(SERVO_2, 0, 350)
         pwm.set_pwm(SERVO_3, 0, 350)
 
     controller = EightBitDoZero2(
-        on_r=action_on_r,
-        on_l=action_on_l
+        on_r=move_max,
+        on_l=move_min
     )
     controller.listen()
 
