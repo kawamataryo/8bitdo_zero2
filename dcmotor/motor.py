@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from gpiozero import Motor
-from utils.eightbitdo import EightBitDo
+from utils.eightbitdozero2 import EightBitDoZero2
 
 # motor
 motorA = Motor(forward=17, backward=22)
@@ -28,7 +28,7 @@ def main():
         motorA.forward()
         motorB.forward(0.1)
 
-    controller = EightBitDo(
+    controller = EightBitDoZero2(
         on_up=move_forward,
         on_down=move_backward,
         off_up_or_down=stop,

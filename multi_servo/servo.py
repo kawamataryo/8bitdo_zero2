@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import Adafruit_PCA9685
-from utils.eightbitdo import EightBitDo
+from utils.eightbitdozero2 import EightBitDoZero2
 
 # servo move
 MOVE_MAX = 600
@@ -28,7 +28,7 @@ def main():
         pwm.set_pwm(SERVO_2, 0, 350)
         pwm.set_pwm(SERVO_3, 0, 350)
 
-    controller = EightBitDo(
+    controller = EightBitDoZero2(
         on_r=action_on_r,
         on_l=action_on_l
     )

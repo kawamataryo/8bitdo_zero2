@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from utils.eightbitdo import EightBitDo
+from utils.eightbitdozero2 import EightBitDoZero2
 from gpiozero import Servo
 
 # motor
@@ -16,7 +16,7 @@ def main():
     def move_middle():
         servo.value = -1
 
-    controller = EightBitDo(
+    controller = EightBitDoZero2(
         on_a=move_min,
         on_b=move_middle,
         on_x=move_max,

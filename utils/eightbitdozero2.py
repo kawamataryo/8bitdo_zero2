@@ -31,7 +31,7 @@ class BtnCode:
     OFF_SELECT = [0, 1, 8]
 
 
-class EightBitDo:
+class EightBitDoZero2:
     EVENT_FORMAT = "LhBB"
     EVENT_SIZE = struct.calcsize(EVENT_FORMAT)
 

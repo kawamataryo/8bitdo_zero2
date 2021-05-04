@@ -1,6 +1,6 @@
 import struct
 from gpiozero import LED
-from utils.eightbitdo import EightBitDo
+from utils.eightbitdozero2 import EightBitDoZero2
 
 # led
 red = LED(17)
@@ -10,7 +10,7 @@ white = LED(11)
 
 
 def main():
-    controller = EightBitDo(
+    controller = EightBitDoZero2(
         on_y=lambda: red.on(),
         off_y=lambda: red.off(),
         on_x=lambda: yellow.on(),
