@@ -1,6 +1,6 @@
 import struct
 from gpiozero import LED
-from utils.btncode import BtnCode
+from utils.eightbitdo import BtnCode
 
 # 8BitDo path
 device_path = "/dev/input/js0"

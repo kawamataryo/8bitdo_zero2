@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import struct
-from utils.btncode import BtnCode
+from utils.eightbitdo import BtnCode
 from gpiozero import Servo
 
 # 8BitDo path
