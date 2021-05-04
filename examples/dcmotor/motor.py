@@ -1,6 +1,5 @@
-#!/usr/bin/python3
 from gpiozero import Motor
-from eightbitdo_zero2.eightbitdo_zero2 import EightBitDoZero2
+from eightbitdo_zero2 import EightBitDoZero2
 
 # motor
 motorA = Motor(forward=17, backward=22)

@@ -1,7 +1,5 @@
-#!/usr/bin/python
-
 import Adafruit_PCA9685
-from eightbitdo_zero2.eightbitdo_zero2 import EightBitDoZero2
+from eightbitdo_zero2 import EightBitDoZero2
 
 # servo move
 MOVE_MAX = 600

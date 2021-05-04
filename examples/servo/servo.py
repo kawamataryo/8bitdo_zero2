@@ -1,6 +1,5 @@
-#!/usr/bin/python3
-from eightbitdo_zero2.eightbitdo_zero2 import EightBitDoZero2
 from gpiozero import Servo
+from eightbitdo_zero2 import EightBitDoZero2
 
 # motor
 servo = Servo(17)
