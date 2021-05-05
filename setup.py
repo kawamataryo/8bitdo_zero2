@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="eightbitdo_zero2",
-    version="0.1.1",
+    version="0.1.2",
     author="KawamataRyo",
     author_email="ba068082@gmail.com",
     license="MIT",
