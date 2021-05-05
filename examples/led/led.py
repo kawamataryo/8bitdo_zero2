@@ -9,6 +9,7 @@ white = LED(11)
 
 
 def main():
+    # Initialize controller
     controller = EightBitDoZero2(
         on_y=lambda: red.on(),
         off_y=lambda: red.off(),
@@ -19,6 +20,8 @@ def main():
         on_b=lambda: white.on(),
         off_b=lambda: white.off(),
     )
+
+    # Start listen
     controller.listen()
 
 
