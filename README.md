@@ -4,7 +4,10 @@ Python code to use the [8bitdo zero2](https://www.8bitdo.com/zero2/) controller 
 
 <img src="https://i.gyazo.com/7fee2bfe9c81504cda3ec549eb56601f.jpg)" style="max-width: 450px">
 
-# Requestment
+**Operation check environment**
+
+- Raspbian GNU/Linux 10
+- 
 
 # How to use
 
@@ -14,8 +17,7 @@ Python code to use the [8bitdo zero2](https://www.8bitdo.com/zero2/) controller 
 ```bash
 $ pip install eightbitdo-zero2 
 ```
-
-## Usage
+## Usage example
 
 ```python
 from gpiozero import LED
@@ -43,7 +45,7 @@ if __name__ == "__main__":
     main()
 ```
 
-There are more example code in [examples](https://github.com/kawamataryo/8bitdo_zero2/tree/master/examples)
+There are more example code in [examples](https://github.com/kawamataryo/8bitdo_zero2/tree/master/examples).
 
 ## Options
 
