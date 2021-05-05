@@ -4,11 +4,6 @@ Python code to use the [8bitdo zero2](https://www.8bitdo.com/zero2/) controller 
 
 <img src="https://i.gyazo.com/7fee2bfe9c81504cda3ec549eb56601f.jpg)" style="max-width: 450px">
 
-**Operation check environment**
-
-- Raspbian GNU/Linux 10
-- 
-
 # How to use
 
 ## Installation
