@@ -148,7 +148,7 @@ class EightBitDoZero2:
                 if code == BtnCode.OFF_Y:
                     if self.debug:
                         print("Y_OFF")
-                    self.on_y()
+                    self.off_y()
                 if code == BtnCode.ON_START:
                     if self.debug:
                         print("START_ON")
